@@ -1,3 +1,4 @@
+/* Modal dialog with member details */
 .om-modal {
 	display: flex;
 	align-items: center;
@@ -14,9 +15,11 @@
 	line-height: 1.1;
 	color: #666;
 }
+
 .om-modal * {
 	box-sizing: border-box;
 }
+
 .om-modal-open .om-modal {
 	opacity: 1;
 }
@@ -87,22 +90,10 @@
 }
 
 .om-modal .om-photo img {
-	/*position: static;*/
 	height: 100%;
-	/*height: auto;*/
 	max-width: 100%;
 	width: 100%;
-	/*-webkit-align-self: center;*/
-	/*-ms-flex-item-align: center;*/
-	/*align-self: center;*/
 }
-
-/*@supports (object-fit: cover) {*/
-	/*.om-modal .om-photo img {*/
-		/*object-fit: cover;*/
-		/*width: 100%;*/
-	/*}*/
-/*}*/
 
 @media (min-width: 560px) {
 	.om-header {
@@ -132,7 +123,7 @@
 	color: inherit;
 }
 
-/* Modal Dialog -> Cotacts */
+/* Modal Dialog -> Contacts */
 .om-contacts {
 	margin: 20px 0;
 }

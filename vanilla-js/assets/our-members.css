@@ -10,6 +10,7 @@ html {
 	line-height: 1.1;
 	color: #666;
 }
+
 .om * {
 	box-sizing: border-box;
 }
@@ -71,7 +72,7 @@ select.om-control {
 	width: 180px;
 }
 
-/* List of Members */
+/* Empty list placeholder */
 .om-nobody {
 	text-align: center;
 	min-height: 100px;
@@ -80,6 +81,7 @@ select.om-control {
 	justify-content: center;
 }
 
+/* List of Members */
 .om-members {
 	display: flex;
 	flex-wrap: wrap;

@@ -59,11 +59,6 @@
     dom.toolbar.addEventListener('submit', function(event) { event.preventDefault(); });
   }
 
-  function onFilterChange(event) {
-    reset();
-    onScroll();
-  }
-
   function reset() {
     members = [];
     offset = 0;
@@ -72,6 +67,11 @@
       dom.members.querySelectorAll('.om-member')
         .forEach(function(element) { element.remove(); });
     }
+  }
+
+  function onFilterChange(event) {
+    reset();
+    onScroll();
   }
 
   function onScroll(done) {
