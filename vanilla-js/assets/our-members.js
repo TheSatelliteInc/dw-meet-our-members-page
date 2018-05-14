@@ -1,28 +1,34 @@
 (function(window, document) { 'use strict';
   var dom = {};
   var members, offset, limit = 100, eof;
-  var apiUrl;
+  var apiUrl, assetsPrefix;
+  var container;
 
   (function init() {
-    injectStyles(['our-members.css', 'our-members-modal.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css']);
-    injectScripts(['infinite-scroll.js', 'our-members-modal.js'], onScriptsLoad);
+    container = document.getElementById('our-members');
+    apiUrl = container.dataset.apiUrl;
+    assetsPrefix = container.dataset.assetsPrefix || '';
+    injectStyles([
+      assetsPrefix + 'our-members.css',
+      assetsPrefix + 'our-members-modal.css',
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css',
+    ]);
+    injectScripts([assetsPrefix + 'infinite-scroll.js', assetsPrefix + 'our-members-modal.js'], onScriptsLoad);
   })();
 
   function onScriptsLoad() {
-    loadTemplate('our-members.html', function(element) {
+    loadTemplate(assetsPrefix + 'our-members.html', function(element) {
       dom.mainTpl = element;
       if(dom.modalTpl) onTemplatesLoad();
     });
-    loadTemplate('our-members-modal.html', function(element) {
+    loadTemplate(assetsPrefix + 'our-members-modal.html', function(element) {
       dom.modalTpl = element;
       if(dom.mainTpl) onTemplatesLoad();
     });
   }
 
   function onTemplatesLoad() {
-    var container = document.getElementById('our-members');
     container.appendChild(dom.mainTpl);
-    apiUrl = container.dataset.apiUrl;
 
     reset();
     applySelectors(dom);
