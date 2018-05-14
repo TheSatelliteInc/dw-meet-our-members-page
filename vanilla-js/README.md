@@ -1,7 +1,7 @@
 Embeddable Meet Our Members page
 --------------------------------
 
-To integrate it into any HTML page of you site:
+To integrate it into any HTML page of your site:
 
 - copy `assets` folder with all files inside;
 - add the following code to your HTML page:
