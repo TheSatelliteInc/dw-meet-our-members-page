@@ -1,0 +1,172 @@
+.om-modal {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	opacity: 0;
+	transition: opacity .15s;
+	font-size: 16px;
+	line-height: 1.1;
+	color: #666;
+}
+.om-modal * {
+	box-sizing: border-box;
+}
+.om-modal-open .om-modal {
+	opacity: 1;
+}
+
+.om-modal-fade {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255,255,255,0.85);
+}
+
+.om-modal-dialog {
+	display: flex;
+	position: relative;
+	width: 100%;
+	max-width: 640px;
+	max-height: 94%;
+	margin: 10px;
+	padding: 25px;
+	border: 1px solid #bbb;
+	border-radius: 5px;
+	background: #fff;
+	z-index: 1;
+}
+
+.om-modal-scroll {
+	overflow-y: scroll;
+}
+
+.om-modal-open {
+	max-height: 100%;
+	overflow: hidden;
+}
+
+.om-modal-cross {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 9px;
+	border: 0;
+	outline: 0;
+	box-shadow: none;
+	font-size: 30px;
+	line-height: 17px;
+	color: #000;
+	background: transparent;
+	cursor: pointer;
+	opacity: 0.2;
+	transition: opacity .15s;
+}
+.om-modal-cross::after {
+	content: "\d7";
+}
+.om-modal-cross:hover {
+	opacity: 1;
+}
+
+.om-modal .om-photo {
+	display: block;
+	/*flex: 0 0 200px;*/
+	max-width: 200px;
+	width: 200px;
+	height: 200px;
+	margin: 0 15px 15px 0;
+	padding: 0;
+}
+
+.om-modal .om-photo img {
+	/*position: static;*/
+	height: 100%;
+	/*height: auto;*/
+	max-width: 100%;
+	width: 100%;
+	/*-webkit-align-self: center;*/
+	/*-ms-flex-item-align: center;*/
+	/*align-self: center;*/
+}
+
+/*@supports (object-fit: cover) {*/
+	/*.om-modal .om-photo img {*/
+		/*object-fit: cover;*/
+		/*width: 100%;*/
+	/*}*/
+/*}*/
+
+@media (min-width: 560px) {
+	.om-header {
+		display: flex;
+	}
+
+	.om-header .om-photo {
+		margin-bottom: 0;
+	}
+}
+
+.om-modal .om-name {
+	margin: 5px 0;
+	font-size: 1.5em;
+}
+
+.om-modal .om-occupation {
+	margin: 8px 0;
+	font-size: .8125em;
+	font-weight: normal;
+	opacity: 0.8;
+}
+
+.om-modal .om-company {
+	margin: 8px 0;
+	font-size: 1.125em;
+	color: inherit;
+}
+
+/* Modal Dialog -> Cotacts */
+.om-contacts {
+	margin: 20px 0;
+}
+.om-emails, .om-phones {
+	margin: 4px 0;
+}
+.om-email, .om-phone {
+	display: inline-block;
+	margin-right: 8px;
+	white-space: nowrap;
+}
+
+/* Modal Dialog -> Urls */
+.om-urls {
+	margin-top: 20px;
+	font-size: 0;
+}
+.om-url {
+	display: inline-block;
+	margin-right: 5px;
+}
+.om-url .fa {
+	width: 28px;
+	text-align: center;
+	font-size: 28px;
+}
+
+/* Modal Dialog -> Fields */
+.om-field {
+	margin-top: 15px;
+}
+.om-field-name {
+	text-transform: uppercase;
+	font-size: 0.75em;
+	font-weight: bold;
+	color: #000;
+}
