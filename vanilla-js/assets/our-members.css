@@ -15,10 +15,6 @@ html {
 	box-sizing: border-box;
 }
 
-.om h1 {
-	text-align: center;
-}
-
 /* Forms */
 .om-label {
 	text-transform: uppercase;
