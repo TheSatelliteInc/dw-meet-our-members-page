@@ -124,12 +124,12 @@
     function openDialog() {
       document.body.appendChild(dom.modal);
       setTimeout(function() {
-        setClass(document.body, 'om-modal-open');
+        setClass(document.getElementsByTagName('html')[0], 'om-modal-open');
       });
     }
 
     function closeDialog() {
-      setClass(document.body, 'om-modal-open', false);
+      setClass(document.getElementsByTagName('html')[0], 'om-modal-open', false);
       setTimeout(function() {
         document.body.removeChild(dom.modal);
       }, 150);
