@@ -38,7 +38,6 @@
     xhr('GET', apiUrl + '/api/v1/centers', onCenters);
 
     window.infiniteScroll({ distance: 1500, callback: onScroll });
-    window.onscroll(); // trigger initial loading by infiniteScroll
   }
 
   function applySelectors(dom) {

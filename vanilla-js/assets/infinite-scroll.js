@@ -19,13 +19,23 @@
       updateInitiated: false
     };
 
-    window.onscroll = function(event) {
-      handleScroll(scroller, event);
-    };
+    window.addEventListener('scroll', function() {
+      window.requestAnimationFrame(function() {
+        handleScroll(scroller);
+      });
+    });
+
+    // Trigger initial loading
+    window.requestAnimationFrame(function() {
+      handleScroll(scroller);
+    });
+
     // For touch devices, try to detect scrolling by touching
-    document.ontouchmove = function(event) {
-      handleScroll(scroller, event);
-    }
+    document.addEventListener('touchmove', function() {
+      window.requestAnimationFrame(function() {
+        handleScroll(scroller);
+      });
+    });
   };
 
   function getScrollPos() {
